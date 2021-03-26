@@ -5,13 +5,15 @@
 
 typedef struct Node Node;
 
-struct Node {
+struct Node
+{
     const void * data;
     Node * next;
     Node * prev;
 };
 
-struct List {
+struct List
+ {
     Node * head;
     Node * tail;
     Node * current;
@@ -28,11 +30,21 @@ Node * createNode(const void * data) {
     return new;
 }
 
-List * createList() {
-     return NULL;
+List * createList() 
+{
+  List *orden = (List *) malloc(sizeof(List));
+  orden->head = NULL;
+  orden->tail = NULL;
+   return orden;
 }
 
-void * firstList(List * list) {
+void * firstList(List * list)
+{
+  if (list->head != NULL)
+  {
+    list->current = list->head;
+    return (void *)list->head->data;
+  }
     return NULL;
 }
 
