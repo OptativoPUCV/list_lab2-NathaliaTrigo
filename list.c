@@ -50,8 +50,12 @@ void * firstList(List * list)
 
 void * nextList(List * list)
 {
-  list->current->next = list->current;
-  return (void*) list->current->next;
+  if(list->current->next != NULL)
+  {
+    list->current->next = list->current;
+    return (void*) list->current->next;
+  }
+  return NULL;
 }
 
 void * lastList(List * list) {
