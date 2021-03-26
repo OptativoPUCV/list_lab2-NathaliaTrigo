@@ -53,7 +53,7 @@ void * nextList(List * list)
   if (list->current != NULL)
   {
     list->current = list->current->next;
-    return (void*) list->current->next->data;
+    return (void*) list->current->data;
   }
   return NULL;
 }
