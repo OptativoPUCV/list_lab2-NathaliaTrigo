@@ -50,7 +50,7 @@ void * firstList(List * list)
 
 void * nextList(List * list)
 {
-  if(list->current != NULL)
+  if (list->current != NULL)
   {
     list->current = list->current->next;
     return (void*) list->current->next;
@@ -58,7 +58,13 @@ void * nextList(List * list)
   return NULL;
 }
 
-void * lastList(List * list) {
+void * lastList(List * list) 
+{
+  if(list->tail != NULL)
+  {
+    list->current = list->tail;
+    return (void*) list->tail->data;
+  }
     return NULL;
 }
 
