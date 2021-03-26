@@ -48,8 +48,10 @@ void * firstList(List * list)
     return NULL;
 }
 
-void * nextList(List * list) {
-    return NULL;
+void * nextList(List * list)
+{
+  list->current->next = list->current;
+  return (void*) list->current->next;
 }
 
 void * lastList(List * list) {
