@@ -70,14 +70,17 @@ void * lastList(List * list)
 
 void * prevList(List * list)
 {
-  
-
+  if(list->current != NULL && list->current->prev != NULL)
+  {
+    list->current = list->current->prev;
+    return (void*) list->current->prev->data;
+  }
     return NULL;
 }
 
 void pushFront(List * list, const void * data)
 {
-  
+
 
 }
 
