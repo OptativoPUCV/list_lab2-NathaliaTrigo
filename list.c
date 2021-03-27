@@ -70,11 +70,14 @@ void * lastList(List * list)
 
 void * prevList(List * list)
 {
+  
 
     return NULL;
 }
 
-void pushFront(List * list, const void * data) {
+void pushFront(List * list, const void * data)
+{
+  
 }
 
 void pushBack(List * list, const void * data) {
