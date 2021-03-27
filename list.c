@@ -84,12 +84,15 @@ void pushFront(List * list, const void * data)
 
 }
 
-void pushBack(List * list, const void * data) {
+void pushBack(List * list, const void * data) 
+{
     list->current = list->tail;
     pushCurrent(list,data);
 }
 
-void pushCurrent(List * list, const void * data) {
+void pushCurrent(List * list, const void * data)
+{
+  
 }
 
 void * popFront(List * list) 
