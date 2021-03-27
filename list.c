@@ -78,6 +78,7 @@ void * prevList(List * list)
 void pushFront(List * list, const void * data)
 {
   
+
 }
 
 void pushBack(List * list, const void * data) {
@@ -88,17 +89,20 @@ void pushBack(List * list, const void * data) {
 void pushCurrent(List * list, const void * data) {
 }
 
-void * popFront(List * list) {
+void * popFront(List * list) 
+{
     list->current = list->head;
     return popCurrent(list);
 }
 
-void * popBack(List * list) {
+void * popBack(List * list)
+{
     list->current = list->tail;
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
+void * popCurrent(List * list) 
+{
     return NULL;
 }
 
