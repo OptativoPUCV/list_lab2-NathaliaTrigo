@@ -80,7 +80,8 @@ void * prevList(List * list)
 
 void pushFront(List * list, const void * data)
 {
-  
+  list->current = list->head;
+  pushCurrent(list,data);
 }
 
 void pushBack(List * list, const void * data) 
