@@ -83,7 +83,7 @@ void pushFront(List * list, const void * data)
 
 
 }
-
+//tal cual
 void pushBack(List * list, const void * data) 
 {
     list->current = list->tail;
@@ -94,7 +94,7 @@ void pushCurrent(List * list, const void * data)
 {
   
 }
-
+//TAL CUAL
 void * popFront(List * list) 
 {
     list->current = list->head;
@@ -106,7 +106,7 @@ void * popBack(List * list)
     list->current = list->tail;
     return popCurrent(list);
 }
-
+//TAL CUAL
 void * popCurrent(List * list) 
 {
     return NULL;
