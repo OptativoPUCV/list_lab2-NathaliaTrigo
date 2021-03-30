@@ -86,6 +86,7 @@ void pushFront(List * list, const void * data)
      list->head->prev = nuevoDato;
      nuevoDato->next = list->head;
      nuevoDato = list->head;
+     list->current = nuevoDato;
    }
    else 
    {
