@@ -81,10 +81,17 @@ void * prevList(List * list)
 void pushFront(List * list, const void * data)
 {
    Node *nuevoDato = createNode(data);
-   list->head->prev = nuevoDato;
-   nuevoDato->next = list->head;
-   nuevoDato = list->head;
-  
+   if(list->head != NULL)
+   {
+     list->head->prev = nuevoDato;
+     nuevoDato->next = list->head;
+     nuevoDato = list->head;
+   }
+   else 
+   {
+     list->head = nuevoDato;
+     list->current = list->head;
+   }
 }
 
 void pushBack(List * list, const void * data) 
@@ -127,6 +134,7 @@ void pushCurrent(List * list, const void * data)
   else 
   {
     list->head = nuevoDato;
+    list->current = list->head;
   }
 
   
