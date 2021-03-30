@@ -91,6 +91,7 @@ void pushFront(List * list, const void * data)
    else 
    {
      list->head = nuevoDato;
+     list->tail = nuevoDato;
      list->current = list->head;
    }
 }
@@ -135,6 +136,7 @@ void pushCurrent(List * list, const void * data)
   else 
   {
     list->head = nuevoDato;
+    list->tail = nuevoDato;
     list->current = list->head;
   }
 
