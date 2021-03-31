@@ -158,21 +158,27 @@ void * popCurrent(List * list)
 {
   Node * guardar = list->current;
    if(list == NULL) return NULL;
+   //Verificamos si el current esta al final si es asi entonces al current le asignamos el anterior y borramos el ultimo
    if(list->current == list->tail)
    {
      list->tail = list->current->prev;
      list->tail->next = NULL;
     
    }
+    //Verificamos si el current esta al inicio si es asi entonces al current le asignamos el siguiente y borramos el dato que estaba al principio
    else if(list->current == list->head)
    {
       list->head = list->current->next;
       list->head->prev = NULL;
    }
-   else{
+   else
+   {
+     //Como borramos el anterior al current debemos hacer que apunte al siguiente 
      list->current->prev->next = list->current->next;
+     //Como borramos el siguiente al current debemos hacer que apunte al anterior
      list->current->next->prev =list->current->prev;
    }
+   // Debemos retornar el dato que guardamos en el list current
    return (void*)(guardar->data);
 }
 
