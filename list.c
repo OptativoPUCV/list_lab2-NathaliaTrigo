@@ -169,7 +169,11 @@ void * popCurrent(List * list)
       list->head = list->current->next;
       list->head->prev = NULL;
    }
-   return(void*)(guardar->data);
+   else{
+     list->current->prev->next = list->current->next;
+     list->current->next->prev =list->current->prev;
+   }
+   return (void*)(guardar->data);
 }
 
 void cleanList(List * list) {
