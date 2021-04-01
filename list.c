@@ -156,13 +156,13 @@ void * popBack(List * list)
 void * popCurrent(List * list) 
 {
   Node * guardar = list->current;
+  void *aux = (void*) guardar->data;
    if(list == NULL) return NULL;
    //Verificamos si el current esta al final si es asi entonces al current le asignamos el anterior y borramos el ultimo
    if(list->current == list->tail)
    {
      list->tail = list->current->prev;
      list->tail->next = NULL;
-    
    }
     //Verificamos si el current esta al inicio si es asi entonces al current le asignamos el siguiente y borramos el dato que estaba al principio
    else if(list->current == list->head)
@@ -178,7 +178,8 @@ void * popCurrent(List * list)
      list->current->next->prev =list->current->prev;
    }
    // Debemos retornar el dato que guardamos en el list current
-   return (void*)(guardar->data);
+   free(guardar);
+   return aux;
    //Profe me dijeron que debia hacer free pero cuando lo intento hacer no se puede porque se me cae
 }
 
