@@ -156,6 +156,7 @@ void * popBack(List * list)
 void * popCurrent(List * list) 
 {
   Node * guardar = list->current;
+  void *aux = (void*) guardar->data;
    if(list == NULL) return NULL;
    //Verificamos si el current esta al final si es asi entonces al current le asignamos el anterior y borramos el ultimo
    if(list->current == list->tail)
@@ -176,7 +177,8 @@ void * popCurrent(List * list)
      //Como borramos el siguiente al current debemos hacer que apunte al anterior
      list->current->next->prev =list->current->prev;
    }
-   return (void *) guardar->data;
+   free(guardar);
+   return aux;
 }
 
 void cleanList(List * list) {
