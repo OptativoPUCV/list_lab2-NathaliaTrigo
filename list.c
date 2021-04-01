@@ -179,7 +179,7 @@ void * popCurrent(List * list)
    }
    // Debemos retornar el dato que guardamos en el list current
    return (void*)(guardar->data);
-   
+   //Profe me dijeron que debia hacer free pero cuando lo intento hacer no se puede porque se me cae
 }
 
 void cleanList(List * list) {
