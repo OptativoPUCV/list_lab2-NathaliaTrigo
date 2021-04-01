@@ -177,10 +177,9 @@ void * popCurrent(List * list)
      //Como borramos el siguiente al current debemos hacer que apunte al anterior
      list->current->next->prev =list->current->prev;
    }
-   // Debemos retornar el dato que guardamos en el list current
+   // Debemos liberar el dato y retornar el aux 
    free(guardar);
    return aux;
-   //Profe me dijeron que debia hacer free pero cuando lo intento hacer no se puede porque se me cae
 }
 
 void cleanList(List * list) {
