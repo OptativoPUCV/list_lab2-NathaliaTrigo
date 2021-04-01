@@ -116,7 +116,6 @@ void pushCurrent(List * list, const void * data)
       }
       list->head->next = nuevoDato;
       nuevoDato->prev = list->head;
-      
     }
     else if (list->current == list->tail)
     {
@@ -179,7 +178,9 @@ void * popCurrent(List * list)
      list->current->next->prev =list->current->prev;
    }
    // Debemos retornar el dato que guardamos en el list current
+   free(guardar);
    return (void*)(guardar->data);
+   
 }
 
 void cleanList(List * list) {
